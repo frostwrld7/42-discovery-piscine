@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: JetBrains Mono, monospace;
+  font-size: 2.3vmin;
+  scroll-behavior: auto;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* console log */
+
+.print-text {
+  font-size: 2.3em;
+}
+
+.string {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  animation: move 4s infinite;
+  margin-top: 10px;
+}
+
+.greeting {
+  position: relative;
+  top: 8.6vmin;
+  animation: white-out 60s infinite;
+}
+
+.closure::after {
+  content: '';
+  position: absolute;
+  height: 25vmin;
+  width: 40vmin;
+  background: #282c34;
+  transform: translate(-45vmin, -25vmin);
+}
+
+.closure::before {
+  content: '';
+  position: absolute;
+  height: 25vmin;
+  width: 40vmin;
+  background: #282c34;
+  transform: translate(-40vmin, 6vmin);
+}
+
+.en {
+  color: #fa8231;
+}
+
+.es {
+  color: white;
+}
+
+.de {
+  color: #c678dd;
+}
+
+.it {
+  color: #0c0c0e;
+}
+
+@keyframes move {
+  25% {
+    transform: translatey(-5.8vmin);
+    opacity: 1;
+  }
+  50% {
+    transform: translatey(-11vmin);
+  }
+  75% {
+    transform: translatey(-18vmin);
+  }
+}
+
+/* console log end */
+
+
+.parallax{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.black-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 50vh;
+}
+
+.parallax {
+  background: #282c34;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.black-section {
+  background-color: black;
+  color: white;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 800px;
+}
+
+.desc {
+  font-size: 1.8vmin;
+  margin-top: 50px;
+  color: #fa8231;
+}
+
+.image2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 800px;
+
+}
+
+.center-text {
+  font-size: 100px;
+  position: relative;
+  top: 0;
+}
+
+
+/* nav menu */
+
+nav {
+  position: sticky; 
+  background: #282c34;
+  padding: 16px;
+  .menuItems {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin: 50px;
+
+      a {
+        text-decoration: none;
+        color: #8f8f8f;
+        font-size: 2vmin;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: #fa8231;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profil-image {
+  background-image: url(https://images-ext-1.discordapp.net/external/C-QJL-2tq3MLhBtxYVeeVBGlnYl7p6tnscGkMu5Om1Q/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/594544820203290674/f4e69271abba811a242b861b27c238d2.png?format=webp&quality=lossless&width=798&height=798);
+  width: 500px;
+  height: 500px;
+  background-position: center;
+  position: absolute;
+  top: 8%;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+.npareti {
+  position: absolute;
+  text-align: center;
+  z-index: 999;
+  margin-bottom: 1000px;
+  font-size: 4vmin;
+}
+
+.img-discord {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+}

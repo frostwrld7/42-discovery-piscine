@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="background.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="button">Clique ici pour changer de couleur !</button>
+    <script>
+        const randomString = (length) => {
+            const allCharacters = 'ABCDEF1234567890'
+            let finalString = '';
+            for(let i = 0; i < length; i++) {
+                finalString += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length))
+            }
+            return finalString
+        }
+        $( '#button' ).click(function () {
+            $( 'body' ).css( 'background-color', `#${randomString(6)}` )
+        })
+    </script>
+</body>
+</html>

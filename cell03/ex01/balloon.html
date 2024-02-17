@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" style="background-color: red; width: 200px; height: 200px; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+<script>
+    const div = document.getElementById('div');
+    let currentDivWidth = parseInt(div.style.width.split('px')[0]);
+    let currentDivHeight = parseInt(div.style.height.split('px')[0]);
+    const colors = ['red', 'green', 'blue']
+    let currentIndex = 0
+    let oldColor = [];
+
+    const changeColor = () => {
+        switch(currentIndex) {
+            case 0:
+            currentIndex++
+            break;
+            case 1:
+            currentIndex++
+            break;
+            case 2:
+            currentIndex = 0
+            break;
+        }
+    }
+
+    div.addEventListener('click', function () {
+        currentDivWidth >= 420 ? currentDivWidth = 200 : currentDivWidth += 10;
+        currentDivHeight >= 420 ? currentDivHeight = 200 : currentDivHeight += 10;
+        div.style.width = `${currentDivWidth}px`;
+        div.style.height = `${currentDivHeight}px`;
+        changeColor()
+        const currentColor = colors[currentIndex]
+        oldColor.push(div.style.backgroundColor)
+        div.style.backgroundColor = currentColor
+    })
+    
+    div.addEventListener('mouseenter', function () {
+        currentDivWidth > 200 ? currentDivWidth -= 5 : currentDivWidth = 200
+        currentDivHeight > 200 ? currentDivHeight -= 5 : currentDivHeight = 200
+        div.style.width = `${currentDivWidth}px`;
+        div.style.height = `${currentDivHeight}px`;
+        div.style.backgroundColor = oldColor[oldColor.length - 1]
+        if (oldColor.length === 0) return
+        oldColor.length-=1
+    })
+</script>
+</body>
+</html>

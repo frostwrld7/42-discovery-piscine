@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<style>
+    .calc {
+        position: relative;
+        left: 50%;
+        margin-top: 5%;
+        transform: translate(-50%);
+        border: 1px solid transparent;
+        width: 450px;
+        height: 500px;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .calcTitle {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .inputLeftMember {
+        position: absolute;
+        left: 5%;
+        top: 15%;
+        border-color: rgb(145, 55, 55);
+        border-radius: 25px;
+        width: 75px;
+        text-align: center;
+    }
+    .inputOperator {
+        width: 140px;
+        position: absolute;
+        height: 30px;
+        top: 14.5%;
+        left: 34%;
+        border-color: rgb(145, 55, 55);
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .inputRightMember {
+        position: absolute;
+        left: 75%;
+        top: 15%;
+        border-color: rgb(145, 55, 55);
+        border-radius: 25px;
+        width: 75px;
+        text-align: center;
+    }
+    .inputButton {
+        position: absolute;
+        left: 37%;
+        top: 30%;
+        width: 25%;
+        height: 7%;
+        border-color: rgb(145, 55, 55);
+        border-radius: 25px;
+    }
+    .inputImage {
+        width: 150px;
+        height: 200px;
+        position: absolute;
+        left: 33%;
+        bottom: 10%;
+    }
+</style>
+<body>
+    <div class="calc">
+        <p class="calcTitle">Calculatrice</p>
+        <form onsubmit=submitForm()>
+        <input class="inputLeftMember" id="idLeftMember" onchange='handleChange("idLeftMember")' type="text"></input>
+        <select class="inputOperator" onchange='handleChange("idOperator")' id="idOperator">
+            <option selected="true" disabled="true" value="">Choisir l'operateur</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="%">%</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+          </select>
+          <input class="inputRightMember" type="text" id="idRightMember" onchange='handleChange("idRightMember")'></input>
+          <button type="submit" class="inputButton">Try me!</button>
+          <img class="inputImage" src="https://www.pngall.com/wp-content/uploads/5/X-Letter-PNG-Pic.png">
+        </form>
+    </div>
+</body>
+
+<script>
+    setInterval(() => {
+        alert('Please, use me...')
+    }, 30000)
+    const allData = {
+    idLeftMember: null,
+    idRightMember: null,
+    idOperator: null
+    }
+    const handleChange = (type) => {
+
+        const dataToChange = $( `#${type}` ).val()
+        if (!dataToChange) return
+        allData[type] = dataToChange
+    }
+    const submitForm = () => {
+    if (!parseFloat(allData.idLeftMember) && !parseFloat(allData.idRightMember)) return alert('Error :(')
+    if(!allData.idOperator) return alert('Error :(')
+    const expressionToEvaluate = `${parseFloat(allData.idLeftMember)} ${allData.idOperator} ${allData.idRightMember}`
+    if (allData.idRightMember === '0' && allData.idOperator === '%')  {
+    console.log("It's over 9000!")
+    return alert('It’s over 9000!')
+    }
+    if (allData.idRightMember === '0' && allData.idOperator === '/') {
+    console.log("It's over 9000!")
+    return alert('It’s over 9000!')
+    }
+    const result = eval(expressionToEvaluate)
+    console.log(result)
+    alert(`Voici le resultat:\n ${result}`)
+    }
+</script>
+</html>

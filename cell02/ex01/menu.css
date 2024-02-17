@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'segoe ui';
+  }
+
+  .logo {
+    float: left;
+  }
+
+  .nav-header {
+    display: inline;
+  }
+
+  .nav-links {
+    list-style: none;
+  }
+
+  .nav-links li {
+    display: inline-block;
+    padding: 20px 60px 20px 60px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    text-align: center;
+  }
+  .voyagerDiv {
+    display: none;
+    position: absolute;
+    background-color: #ccc;
+    width: 188px;
+    transition: display 0.2s ease-out;
+  }
+  .voyagerDiv li:hover, .voyagerDiv li:focus {
+    background-color: bisque;
+  }
+  .voyagerDiv li {
+    display: block;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.voyagerLi:hover + .voyagerDiv,
+.voyagerDiv:hover {
+    display: block;
+}
+
+.billetsDiv {
+    display: none;
+    position: absolute;
+    background-color: #ccc;
+    width: 173px;
+    transition: display 0.6s ease-out;
+    margin-left: 193px;
+  }
+
+  .billetsDiv li:hover, .billetsDiv li:focus {
+    background-color: bisque;
+  }
+  .billetsDiv li {
+    display: block;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.billetsLi:hover + .billetsDiv,
+.billetsDiv:hover {
+    display: block;
+}
+
+
+.offresDiv {
+    display: none;
+    position: absolute;
+    background-color: #ccc;
+    width: 172px;
+    transition: display 0.6s ease-out;
+    margin-left: 371px;
+  }
+
+  .offresDiv li:hover, .offresDiv li:focus {
+    background-color: bisque;
+  }
+  .offresDiv li {
+    display: block;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.offresLi:hover + .offresDiv,
+.offresDiv:hover {
+    display: block;
+}
+
+
+
+  header {
+    background-color:blanchedalmond;
+    position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
+	width: 100vw;
+  }

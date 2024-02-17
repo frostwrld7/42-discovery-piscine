@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #eee;
+  user-select: none;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c1f7f5;
+}
+.nav-links{
+  position: fixed;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.nav-links li{
+  list-style: none;
+  margin: 0 12px;
+}
+.nav-links li a{
+  position: relative;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+}
+.nav-links li a:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #000000;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.nav-links li a:hover:before{
+  width: 100%;
+}
+.nav-links li.center a:before{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-links li.upward a:before{
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+.nav-links li.upward a:hover:before{
+  bottom: 0px;
+  opacity: 1;
+}
+.nav-links li.forward a:before{
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  background-image: url('../assets/mountain-clouds-scenery-nature-forest-4k-wallpaper-3840x2160-uhdpaper.com-433.0_b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+  height: 100vh;  
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.125);  
+  padding: 38px;  
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+  
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image {
+  background-image: url(https://images-ext-2.discordapp.net/external/R_biiuzGRjlnu3T9diYF--91dY_wzP7sw1DuNbV5sFs/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/548028946097111045/cf9414602a1d3a4dac49454a46f3b544.png?format=webp&quality=lossless&width=512&height=512);
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 5%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255, 0.255)
+}
+
+h1{
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255,255,255,0.98);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+p {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.button-wrapper{
+  margin-top: 18px;
+}
+
+.btna {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;  
+  letter-spacing: 2px;  
+  cursor: pointer;
+}
+
+.btna + .btna {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: all .3s ease;
+  
+}
+
+.outline:hover {
+  transform: scale(2);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;  
+}
+
+.fill {
+  background: rgba(0, 0, 0, 0.9);
+  color: rgba(255,255,255,0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease; 
+}
+
+.fill:hover{
+  transform: scale(1.125);  
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+  transition: all .3s ease;    
+}
+
+
+/* cv noe*/
+
+
+.card {
+  width: 21em;
+  height: 32.2em;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  transition: 1s ease-in-out;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  text-align: center;
+}
+
+
+.card span {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  margin: 1em;
+}
+
+.card .img {
+  width: 15em;
+  height: 16em;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+  background-image: url(https://images-ext-1.discordapp.net/external/C-QJL-2tq3MLhBtxYVeeVBGlnYl7p6tnscGkMu5Om1Q/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/594544820203290674/f4e69271abba811a242b861b27c238d2.png?format=webp&quality=lossless&width=798&height=798);
+  background-size: cover;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  transition: .4s ease-in-out;
+}
+
+.card a:hover {
+  color: red;
+}
+
+.bi {
+  width: 30px;
+  height: 30px;
+}
+
+.card button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  background: transparent;
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.card button:hover {
+  color: white;
+  cursor: pointer;
+  transform: scale(1.125);
+}
+
+.cv-link {
+  text-decoration: none;
+  margin-bottom: 30px;
+}

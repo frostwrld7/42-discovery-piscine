@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #eee;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+.nav-links{
+  z-index: 999;
+  position: fixed;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.nav-links li{
+  list-style: none;
+  margin: 0 12px;
+}
+.nav-links li a{
+  position: relative;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+}
+.nav-links li a:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #000000;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.nav-links li a:hover:before{
+  width: 100%;
+}
+.nav-links li.center a:before{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-links li.upward a:before{
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+.nav-links li.upward a:hover:before{
+  bottom: 0px;
+  opacity: 1;
+}
+.nav-links li.forward a:before{
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/**
+
+.container {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.125);  
+  padding: 38px;  
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+  
+}
+*/
+
+.parallax {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.firstPage {
+    background-image: url('../assets/forest-nature-scenery-2k-wallpaper-uhdpaper.com-563@0@f.jpg'); 
+}
+
+.container {
+    height: 500px;
+    position: absolute;
+    left: 50%;
+}
+
+.name {
+    z-index: 10;
+    position: absolute;
+    font-size: 4em;
+    top: 60%;
+    font-family: 'Poppins', sans-serif;
+    animation: animate 4s ease-in-out infinite;
+    filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+    font-family: 'JetBrains Mono';
+    color: #ffffff;
+}
+
+.string {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation: move 4s infinite;
+    font-family: 'JetBrains Mono';
+  }
+
+.tools {
+    border: 1px solid #000;
+    background-color: #000;
+    width: 100%;
+    height: 9em;
+}
+
+.aboutme {
+    z-index: 4;
+    align-items: center;
+    justify-content: center;
+    width: 48em;
+    max-width: 32em;
+    max-height: 32em;
+    height: 96em;
+    padding-bottom: 90px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.aboutMeH1 {
+    position: absolute;
+    left: 35%;
+    margin-bottom: 3em;
+}
+
+.aboutMeImg {
+    position: absolute;
+    top: 14%;
+    width: 19em;
+    height: 19em;
+    border-radius: 25px;
+}
+
+.aboutMeP1 {
+    color: #ffffff;
+    position: absolute;
+    left: 32%;
+    top: 10%; 
+    font-size: 24px;
+    font-family: 'JetBrains Mono';
+}
+
+.aboutMeP2 {
+    color: #ffffff;
+    position: absolute;
+    left: 16%;
+    top: 26%;
+    font-size: 24px;
+    min-width: 5em;
+    width: 19em;
+    font-family: 'JetBrains Mono';
+}
+
+.aboutMeP3 {
+    color: #ffffff;
+    position: absolute;
+    left: 10%;
+    top: 46%;
+    font-size: 24px;
+    max-width: 22em;
+    font-family: 'JetBrains Mono';
+}
+
+.aboutMeP4 {
+    color: #ffffff;
+    position: absolute;
+    left: 13%;
+    top: 66%;
+    font-size: 24px;
+    width: 19em;
+    font-family: 'JetBrains Mono';
+}
+
+.aboutMeP5 {
+    color: #ffffff;
+    position: absolute;
+    left: 8%;
+    top: 86%;
+    font-size: 24px;
+    max-width: 19em;
+    font-family: 'JetBrains Mono';
+}
+
+.secondPage {
+    background-image: url('../assets/jungle-forest-falls-deer-nature-scenery-uhdpaper.com-4K-6.942.jpg');
+}
+
+.thirdPage {
+    background-image: url('../assets/waterfall-nature-forest-scenery-uhdpaper.com-4K-6.973.jpg');
+}
+
+
+
+.boxContact {
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: transparent;
+    border-radius: 25px;
+    width: 30em;
+    height: 35em;
+    text-align: center;
+    display: block;
+}
+
+
+.boxContact h1 {
+    font-family: 'JetBrains Mono';
+    margin-bottom: 3em;
+    color: #000000;
+}
+
+.boxContact h2 {
+    font-family: 'JetBrains Mono';
+    color: #fff
+}
+
+.boxGithub {
+    width: 5em;
+    height: 5em;
+}
+
+.boxDiscord {
+    width: 5em;
+    height: 5em;
+}
